@@ -325,7 +325,7 @@ body {
   .menu__open {
     opacity: 1;
     visibility: visible;
-    display: block;
+    display: flex;
   }
   .burger, .burger span, .burger__open::before, .burger__open::after, .menu {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
