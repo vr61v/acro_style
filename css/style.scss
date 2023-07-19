@@ -214,7 +214,7 @@ body{ font-family: 'Bitter', serif; color: $white; }
       opacity: 1;
       visibility: visible;
     }
-    &__open{opacity: 1; visibility: visible; display: block;}
+    &__open{opacity: 1; visibility: visible; display: flex;}
 	}
   .burger, .burger span, .burger__open::before, .burger__open::after, .menu{
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
