@@ -338,7 +338,7 @@ main {
 .about {
   position: relative;
   min-height: 100vh;
-  background-image: url(/source/background/about.png);
+  background-image: url(/source/background/about.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -420,7 +420,7 @@ main {
 .director {
   position: relative;
   min-height: 100vh;
-  background-image: url(/source/background/director.png);
+  background-image: url(/source/background/director.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -514,7 +514,7 @@ main {
 }
 .directions {
   position: relative;
-  background-image: url(../source/background/directions.png);
+  background-image: url(../source/background/directions.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -599,7 +599,7 @@ main {
     font-size: 16px;
   }
   .directions__content {
-    margin: 25px 0 0 0;
+    margin: 25px 0 50px;
   }
   .card__image {
     padding: 0 20px;
@@ -612,7 +612,7 @@ main {
 }
 .teachers {
   position: relative;
-  background-image: url(../source/background/teachers.png);
+  background-image: url(../source/background/teachers.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -794,6 +794,17 @@ main {
   }
 }
 @media (max-width: 480px) {
+  .teachers__container {
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+  .teachers__title {
+    font-size: 32px;
+    padding-bottom: 50px;
+  }
+  .teachers__list {
+    grid-template-columns: 1fr;
+  }
   .teachers-modal__item-name {
     font-size: 24px;
     font-weight: 600;
