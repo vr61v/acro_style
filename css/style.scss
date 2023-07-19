@@ -21,6 +21,7 @@ body{ font-family: 'Bitter', serif; color: $white; }
 	box-sizing: content-box;
 }
 
+
 // HEADER
 .header {
   background: linear-gradient(180deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.00) 100%);
@@ -177,6 +178,7 @@ body{ font-family: 'Bitter', serif; color: $white; }
     backdrop-filter: blur(5px);
     visibility: hidden;
     opacity: 0;
+    display: none;
 
     &__list, &__sub-list{
       display: flex;
@@ -212,7 +214,7 @@ body{ font-family: 'Bitter', serif; color: $white; }
       opacity: 1;
       visibility: visible;
     }
-    &__open{opacity: 1; visibility: visible;}
+    &__open{opacity: 1; visibility: visible; display: block;}
 	}
   .burger, .burger span, .burger__open::before, .burger__open::after, .menu{
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
@@ -223,8 +225,6 @@ body{ font-family: 'Bitter', serif; color: $white; }
 main{
   flex: 1 1 auto;
 }
-
-
 // ABOUT
 .about {
     position: relative;
@@ -456,6 +456,174 @@ main{
         border-radius: 30px;
       }
     }
+  }
+}
+
+
+// TEACHERS
+.teachers {
+  position: relative;
+  background-image: url(../source/background/teachers.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__container{
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+  &__title { 
+    padding-bottom: 100px; 
+    font-size: 64px; 
+    font-weight: 600; 
+    text-align: center;
+  }
+  &__list {
+    display: grid;
+    justify-items: stretch;
+    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  &__list-item { 
+    border-radius: 30px;
+    background: rgba($color: $black, $alpha: 0.3);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(.03,.98,.52,.99);
+  }
+  &__list-item:hover { 
+    background: rgba($color: $gray, $alpha: 0.25);
+    transition: all 0.2s cubic-bezier(.03,.98,.52,.99);
+  }
+  &__list-item:active { 
+    background: rgba($color: $white, $alpha: 0.25);
+    transition: all 0.2s cubic-bezier(.03,.98,.52,.99);
+  }
+  &__item-img {
+    padding: 80px 40px 0;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+  }
+  &__item-description {
+    font-size: 32px;
+    text-align: center;
+    padding: 25px 40px 80px;
+  }
+}
+
+.teachers-modal {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    position: fixed;
+    z-index: 10;
+    padding-bottom: 100px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+
+    // transition: all 0.3s;
+  &__container{ 
+    display: flex;
+    background-color: rgba($color: $black, $alpha: 0.4);
+    border-radius: 30px;
+    padding: 40px;
+    margin: 0 15px;
+  }
+  &__close{
+    color: $white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s;
+    height: 20px;
+    width: 30px;
+  }
+  &__close:hover, &__close:focus {
+    color: $black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  &__item-img {
+    max-width: 540px;
+    max-height: 400px;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+  }
+  &__text{ max-width: 600px; padding-left: 40px; }
+  &__item-name {font-size: 48px; font-weight: 600; text-align: center;}
+  &__item-description {font-size: 24px;}
+  &__open{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
+  }
+}
+@media(max-width: 1200px) {
+  .teachers {
+    &__container{
+      padding-top: 300px;
+      padding-bottom: 300px;
+    }
+    &__list {
+      gap: 20px;
+    }
+    &__item-img {
+      padding: 40px 20px 0;
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+      }
+    }
+    &__item-description {
+      font-size: 24px;
+      text-align: center;
+      padding: 25px 20px 40px;
+    }
+  }
+
+  .teachers-modal {
+    &__container{ padding: 20px; }
+    &__text{ max-width: 500px; padding-left: 40px; }
+    &__item-name {font-size: 32px; font-weight: 600; text-align: center; padding-bottom: 20px;}
+    &__item-description {font-size: 18px;}
+  }
+}
+@media(max-width: 728px){
+  .teachers {
+    &__container{
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+    &__title { font-size: 48px; }
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .teachers-modal {
+    &__container{flex-direction: column-reverse}
+    &__text{ padding-left: 0; padding-bottom: 20px; }
+  }
+}
+@media(max-width: 480px){
+  .teachers-modal {
+    &__item-name {font-size: 24px; font-weight: 600; text-align: center; padding-bottom: 20px;}
+    &__item-description {font-size: 16px;}
   }
 }
 
