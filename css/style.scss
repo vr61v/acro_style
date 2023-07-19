@@ -403,14 +403,13 @@ main{
   }
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     padding: 40px 0;
   }
   &__description{
     padding: 20px 20px 40px;
-    max-width: 250px;
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 .swiper-button-next:after,.swiper-button-prev:after {
@@ -423,17 +422,32 @@ main{
   opacity: var(--swiper-pagination-bullet-inactive-opacity, .9);
 }
 @media(max-width: 1200px) {
+  .directions{  
+    &__content{
+      margin: 100px 25px 50px;
+      overflow: hidden;
+    }
+  }
+  .card{
+    &__image{
+       max-width: 400px;
+      padding: 0 20px;
+    }
+  }
 }
 @media(max-width: 728px){
   .swiper-button-next,.swiper-button-prev {
     display: none;
     font-size: 0px;
   }
+  .card{
+    &__description{ font-size: 24px; }
+    &__image{ max-width: 400px; }
+    &__description{ max-width: 400px; }
+  }
   .directions{
     &__title { font-size: 48px; }
-    &__container{
-      padding: 100px 0;
-    }
+    &__container{  padding: 100px 0; }
   }
 
 }
@@ -444,18 +458,11 @@ main{
       padding: 20px 20px 20px;
       font-size: 16px;
     }
-    &__content{
-      margin: 25px 0 50px;
-    }
+    &__content{ margin: 25px 0 50px; }
   }
-  .card {
-    &__image {
-      padding: 0 20px;
-      img {
-        object-fit: cover;
-        border-radius: 30px;
-      }
-    }
+  .card{
+    &__description{ font-size: 18px; }
+    &__description{ max-width: 400px; }
   }
 }
 
@@ -563,7 +570,7 @@ main{
     }
   }
   &__text{ max-width: 600px; padding-left: 40px; }
-  &__item-name {font-size: 48px; font-weight: 600; text-align: center;}
+  &__item-name {font-size: 48px; font-weight: 600; text-align: center;  padding-bottom: 25px;}
   &__item-description {font-size: 24px;}
   &__open{
     visibility: visible;

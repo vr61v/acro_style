@@ -557,14 +557,13 @@ main {
 }
 .card__title {
   text-align: center;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 600;
   padding: 40px 0;
 }
 .card__description {
   padding: 20px 20px 40px;
-  max-width: 250px;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .swiper-button-next:after, .swiper-button-prev:after {
@@ -578,10 +577,29 @@ main {
   opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.9);
 }
 
+@media (max-width: 1200px) {
+  .directions__content {
+    margin: 100px 25px 50px;
+    overflow: hidden;
+  }
+  .card__image {
+    max-width: 400px;
+    padding: 0 20px;
+  }
+}
 @media (max-width: 728px) {
   .swiper-button-next, .swiper-button-prev {
     display: none;
     font-size: 0px;
+  }
+  .card__description {
+    font-size: 24px;
+  }
+  .card__image {
+    max-width: 400px;
+  }
+  .card__description {
+    max-width: 400px;
   }
   .directions__title {
     font-size: 48px;
@@ -601,13 +619,11 @@ main {
   .directions__content {
     margin: 25px 0 50px;
   }
-  .card__image {
-    padding: 0 20px;
+  .card__description {
+    font-size: 18px;
   }
-  .card__image img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 30px;
+  .card__description {
+    max-width: 400px;
   }
 }
 .teachers {
@@ -724,6 +740,7 @@ main {
   font-size: 48px;
   font-weight: 600;
   text-align: center;
+  padding-bottom: 25px;
 }
 .teachers-modal__item-description {
   font-size: 24px;

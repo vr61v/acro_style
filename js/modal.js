@@ -51,11 +51,11 @@ teacher4_close.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal_calc) {
     modal_calc.classList.remove('modal-calc__open')
-    body_html.classList.remove('body__modal-open')
+    body_html.classList.remove('body__open')
   }
   if (event.target == modal_rules) {
     modal_rules.classList.remove('modal-rules__open')
-    body_html.classList.remove('body__modal-open')
+    body_html.classList.remove('body__open')
   }
 }
 
@@ -63,18 +63,18 @@ window.onclick = function(event) {
 window.onclick = function(event) {
   if (event.target == teacher1_window) {
     teacher1_window.classList.remove('teachers-modal__open')
-    body_html.classList.remove('body__modal-open')
+    body_html.classList.remove('body__open')
   }
   if (event.target == teacher2_window) {
     teacher2_window.classList.remove('teachers-modal__open')
-    body_html.classList.remove('body__modal-open')
+    body_html.classList.remove('body__open')
   }
   if (event.target == teacher3_window) {
     teacher3_window.classList.remove('teachers-modal__open')
-    body_html.classList.remove('body__modal-open')
+    body_html.classList.remove('body__open')
   }
   if (event.target == teacher4_window) {
     teacher4_window.classList.remove('teachers-modal__open')
-    body_html.classList.remove('body__modal-open')
+    body_html.classList.remove('body__open')
   }
 }

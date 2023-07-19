@@ -17,6 +17,7 @@ var swiper = new Swiper(".directions__content", {
 
   breakpoints: {
     0:{slidesPerView: 1,},
+    480:{slidesPerView: 1,},
     728:{slidesPerView: 2,},
     1200:{slidesPerView: 3,},
   },
