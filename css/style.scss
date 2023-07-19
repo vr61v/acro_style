@@ -13,6 +13,7 @@ body{ font-family: 'Bitter', serif; color: $white; }
 	min-width: 0;
   background-color: $black;
 }
+.body__open{ overflow: hidden; }
 .__container{
 	max-width: 1240px;
 	padding: 0 20px;
@@ -20,12 +21,11 @@ body{ font-family: 'Bitter', serif; color: $white; }
 	box-sizing: content-box;
 }
 
-
 // HEADER
 .header {
   background: linear-gradient(180deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.00) 100%);
   backdrop-filter: blur(5px);
-  position: absolute;
+  position: fixed;
 	width: 100%;
 	left: 0;
 	top: 0;
@@ -42,6 +42,11 @@ body{ font-family: 'Bitter', serif; color: $white; }
     font-size: 32px;
     font-weight: 600;
   }
+  &__scroll{
+    top: -100px;
+    transition: all 0.2s;
+  }
+  transition: all 0.2s;
 }
 .menu {
   &__list {
@@ -115,8 +120,20 @@ body{ font-family: 'Bitter', serif; color: $white; }
   display: none;
 }
 @media(max-width: 728px){
+  .header{
+    &__container{
+      min-height: 50px;
+    }
+    &__logo {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    &__scroll{
+      top: -50px;
+    }
+  }
   .burger{
-    width: 40px; height: 30px;
+    width: 35px; height: 25px;
     cursor: pointer;
     background-color: transparent;
     position: relative;
@@ -348,7 +365,6 @@ main{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-bottom: 100px;
 
   &__container{
     padding: 200px 0;
@@ -443,12 +459,63 @@ main{
 }
 
 
+// FOOTER
+.footer {
+  position: relative;
+  background-color: #070707;
+  font-size: 24px;
 
-footer{
+  &__container { padding: 100px 20px; }
+  &__container-list{ display: flex; }
+  &__container-list-social{ 
+    display: flex; 
+    padding-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__list:first-child { padding-right: 100px; }
+  &__about { padding: 15px 0px 0px 25px;}
+  &__about-link{ padding-bottom: 5px;}
+  &__about-link:last-child{ padding-bottom: 0px;}
+  &__logo { font-size: 32px; font-weight: 600; }
+  &__social { display: flex; }
+  &__social-vk {
+    display: block;
+    width: 50px; height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/source/icon/vk.png);
+    margin-right: 30px;
+  }
+  &__social-inst {
+    display: block;
+    width: 50px; height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/source/icon/instagram.png);
+  }
+}
+@media(max-width: 1200px) {
+  .footer{
+    font-size: 18px;
+    &__container { padding: 50px 20px; }
+    &__list:first-child { padding-right: 50px; } 
+    &__logo { font-size: 24px; }
+    &__social-inst, &__social-vk{ width: 40px; height: 40px; }
+  }
+}
+@media(max-width: 728px){
 
 }
-
-
+@media(max-width: 480px){
+  .footer{
+    font-size: 16px;
+    &__list:first-child { padding-right: 25px; } 
+    &__container { padding: 25px 20px; }
+  }
+}
 
 
 
