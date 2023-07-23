@@ -335,7 +335,7 @@ main{
     &__text {
       max-width: none;
       max-height: none;
-      margin-right: none;
+      margin-right: 0;
       margin-bottom: 20px;
     }
   }
@@ -641,6 +641,77 @@ main{
   .teachers-modal {
     &__item-name {font-size: 24px; font-weight: 600; text-align: center; padding-bottom: 20px;}
     &__item-description {font-size: 16px;}
+  }
+}
+
+// CONTACTS
+.contacts {
+  position: relative;
+  background-image: url(../source/background/contacts.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__container {
+    padding: 200px 20px;
+  }
+  &__wrapper{
+    background-color: rgba($color: $black, $alpha: 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    padding: 50px 25px;
+  }
+  &__title { 
+    font-size: 64px; 
+    font-weight: 600; 
+    text-align: center; 
+    padding-bottom: 100px; 
+  }
+  &__text { font-size: 48px; }
+  &__address { 
+    font-size: 32px; 
+    margin: 25px 0 50px 50px;
+  }
+  &__map{ 
+    display: flex; 
+    justify-content: center; 
+    padding-bottom: 50px;
+  }
+  &__map-container{
+    max-width: 700px;
+    border-radius: 30px;
+  }
+  &__phone { font-size: 32px; }
+}
+@media(max-width: 1200px) {
+  .contacts {
+    &__container { padding: 200px 20px; }
+    &__title {  font-size: 64px; padding-bottom: 50px; }
+    &__text { font-size: 24px; }
+    &__address { font-size: 24px; margin: 25px 0 25px 25px; }
+    &__map-container{
+      max-width: 600px;
+    }
+    &__phone { font-size: 18px; }
+  }
+}
+@media(max-width: 728px){
+  .contacts {
+    &__container { padding: 100px 20px; }
+    &__title {  font-size: 48px;}
+    &__text { font-size: 18px; }
+    &__address { font-size: 18px; }
+    &__map-container{
+      max-width: 400px;
+    }
+    &__phone { font-size: 16px; }
+  }
+}
+@media(max-width: 480px){
+  .contacts {
+    &__wrapper{ padding: 25px 25px; }
+    &__title {  font-size: 32px;}
+    &__address { margin: 25px 0; }
+    &__map-container{ max-width: 250px; }
   }
 }
 
