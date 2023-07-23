@@ -60,44 +60,15 @@
       <section class="photo">
         <div class="photo__container __container">
           <div class="photo__title">Фото</div>
-          <div class="photo__list">
-            <div class="photo__list--item">
-              <div class="photo__list--item--text">
-                <div class="photo__list--item--title">АRENA STAGE</div>
-                <div class="photo__list--item--data">18.03.23</div>
-              </div>
-            </div>
-            <div class="photo__list--item">
-              <div class="photo__list--item--text">
-                <div class="photo__list--item--title">АRENA STAGE</div>
-                <div class="photo__list--item--data">18.03.23</div>
-              </div>
-            </div>
-            <div class="photo__list--item">
-              <div class="photo__list--item--text">
-                <div class="photo__list--item--title">АRENA STAGE</div>
-                <div class="photo__list--item--data">18.03.23</div>
-              </div>
-            </div>
-            <div class="photo__list--item">
-              <div class="photo__list--item--text">
-                <div class="photo__list--item--title">АRENA STAGE</div>
-                <div class="photo__list--item--data">18.03.23</div>
-              </div>
-            </div>
-            <div class="photo__list--item">
-              <div class="photo__list--item--text">
-                <div class="photo__list--item--title">АRENA STAGE</div>
-                <div class="photo__list--item--data">18.03.23</div>
-              </div>
-            </div>
-            <div class="photo__list--item">
-              <div class="photo__list--item--text">
-                <div class="photo__list--item--title">АRENA STAGE</div>
-                <div class="photo__list--item--data">18.03.23</div>
-              </div>
-            </div>
+          <div class="photo__sortby">
+            <div class="photo__sortby--text">Отсортировать по: </div>
+            <ul class="photo__sortby--list" id="sortby">
+              <li class="photo__sortby--list--item" id="sortbyBtn" name="name">Алфавиту А-Я</li>
+              <li class="photo__sortby--list--item" id="sortbyBtn" name="data">Новые</li>
+              <li class="photo__sortby--list--item" id="sortbyBtn" name="count">Количество фото</li>
+            </ul>
           </div>
+          <div class="photo__list" id="list"></div>
         </div>
       </section>
       
@@ -136,9 +107,9 @@
 
   <script src="/js/burger.js"></script>
   <script src="/js/scroll.js"></script>
+  <script src="/js/alboms.js"></script>
   <script src="/js/libres/vanilla-tilt.min.js"></script>
   <script src="/js/cards.js"></script>
-
  
 </body>
 

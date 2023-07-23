@@ -957,7 +957,6 @@ main {
 .photo__list--item {
   text-align: center;
   border-radius: 30px;
-  background-image: url(../source/alboms/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -966,8 +965,8 @@ main {
 .photo__list--item--text {
   border-radius: 30px;
   background: rgba(17, 17, 17, 0.25);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   height: 100%;
   width: 100%;
   font-weight: 600;
@@ -983,6 +982,39 @@ main {
 .photo__list--item--data {
   font-size: 24px;
 }
+.photo__sortby {
+  display: flex;
+  font-size: 24px;
+  padding-bottom: 50px;
+}
+.photo__sortby--text {
+  padding: 5px;
+}
+.photo__sortby--list {
+  display: flex;
+  padding-left: 25px;
+}
+.photo__sortby--list--item {
+  margin-right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s;
+}
+.photo__sortby--list--item:hover {
+  background: rgba(17, 17, 17, 0.3);
+  transition: background 0.3s;
+}
+.photo__sortby--list--item--active {
+  margin-right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  background: rgba(17, 17, 17, 0.5);
+  transition: background 0.3s;
+}
+
 @media (max-width: 1200px) {
   .photo__container {
     padding: 250px 20px;
