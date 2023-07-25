@@ -743,6 +743,7 @@ main{
     background-size: cover;
     background-position: center;
     min-height: 300px;
+    cursor: pointer;
   }
   &__list--item--text {
     border-radius: 30px;
@@ -766,35 +767,51 @@ main{
   }
   &__sortby {
     display: flex;
+    align-items: center;
     font-size: 24px;
     padding-bottom: 50px;
   }
   &__sortby--text {
-    padding: 5px;
+    font-size: 24px;
+    margin-right: 25px;
   }
-  &__sortby--list {
-    display: flex;
-    padding-left: 25px;
+
+
+  &__sortby--dropdown{
+    position: relative;
+    display: inline-block;
+    transition: opacity 0.3s;
   }
-  &__sortby--list--item{
-    margin-right: 15px;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 15px;
-    background: rgba($color: #000000, $alpha: 0);
-    transition: background 0.3s;
+  &__sortby--active{ 
+    font-size: 24px;
+    cursor: pointer; 
+    transition: all 0.3s;
   }
-  &__sortby--list--item:hover{
+
+  &__sortby--content{
+    position: absolute;
     background: rgba($color: $black, $alpha: 0.3);
-    transition: background 0.3s;
+    backdrop-filter: blur(4px);
+    padding: 15px 25px;
+    border-radius: 30px;
+    min-width: 200px;
+    z-index: 10;
+    div{ 
+      cursor: pointer; 
+      font-size: 18px; 
+      display: block; 
+      padding-bottom: 5px;
+      transition: all 0.3s; 
+    }
+    div:hover{ 
+      font-size: 20px;  
+      transition: all 0.3s; 
+    }
+    display: none;
   }
-  &__sortby--list--item--active{
-    margin-right: 15px;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 15px;
-    background: rgba($color: $black, $alpha: 0.5);
-    transition: background 0.3s;
+
+  &__sortby--dropdown:hover &__sortby--content {
+    display: block;
   }
 }
 
@@ -810,6 +827,7 @@ main{
     &__title { font-size: 48px; }
     &__list{ grid-template-columns: 1fr; }
     &__list--item{ min-height: 200px; }
+    &__sortby--text { font-size: 18px; }
   }
 }
 @media(max-width: 480px){

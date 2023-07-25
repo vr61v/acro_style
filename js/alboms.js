@@ -11,20 +11,21 @@ var object = [{
   "date": "25.03.23",
   "count": 108
 }]
+
 var data = JSON.parse(JSON.stringify(object));
 
 
-function drawData(activeBtn){
+function drawData(active){
   const list = document.getElementById("list");
 
-  if(activeBtn){
+  if(active){
     list.innerHTML = "";
-    if(activeBtn.target.innerHTML == "Алфавиту А-Я")
-      { data.sort((a, b) => a['name'] < b['name'] ? 1 : -1); }
-    if(activeBtn.target.innerHTML == "Новые")
-      { data.sort((a, b) => Date(a['data']) < Date(b['data']) ? 1 : -1); }
-    if(activeBtn.target.innerHTML == "Количество фото")
-      { data.sort((a, b) => Number(a['count']) < Number(b['count']) ? 1 : -1); }
+    if(active == 1){data.sort((a, b) => a['name'] < b['name'] ? 1 : -1);}
+    if(active == 2) {list.innerHTML = ""; data.sort((a, b) => a['name'] > b['name'] ? 1 : -1);}
+    if(active == 3) {list.innerHTML = ""; data.sort((a, b) => Date(a['date']) < Date(b['date']) ? 1 : -1);}
+    if(active == 4) {list.innerHTML = ""; data.sort((a, b) => Date(a['date']) > Date(b['date']) ? 1 : -1);}
+    if(active == 5) {list.innerHTML = ""; data.sort((a, b) => a['count'] > b['count'] ? 1 : -1);}
+    if(active == 6) {list.innerHTML = ""; data.sort((a, b) => a['count'] < b['count'] ? 1 : -1);}
   }
 
   for(let i = 0; i < data.length; ++i){
@@ -38,25 +39,35 @@ function drawData(activeBtn){
   }
 }
 
-drawData(null);
+
+
+drawData(-1);
 
 
 
-document.querySelector('#sortby').addEventListener('click', e =>{
-  buttons = document.querySelectorAll('#sortbyBtn');
-  for(var i = 0; i < 3; ++i){ 
-    buttons[i].classList.remove("photo__sortby--list--item--active");
-    buttons[i].classList.add("photo__sortby--list--item");
-  }
-  if(e.target.id == "sortbyBtn"){ 
-    e.target.classList.remove("photo__sortby--list--item");
-    e.target.classList.add("photo__sortby--list--item--active");
-    drawData(e);
-  }
-
+document.getElementById('SortBy1').addEventListener('click', e =>{
+  drawData(1);
+  document.getElementById('SortByActive').innerHTML = 'Алфавиту А-Я';
 })
-
-
-
+document.getElementById('SortBy2').addEventListener('click', e =>{
+  drawData(2);
+  document.getElementById('SortByActive').innerHTML = 'Алфавиту Я-А';
+})
+document.getElementById('SortBy3').addEventListener('click', e =>{
+  drawData(3);
+  document.getElementById('SortByActive').innerHTML = 'Новые';
+})
+document.getElementById('SortBy4').addEventListener('click', e =>{
+  drawData(4);
+  document.getElementById('SortByActive').innerHTML = 'Старые';
+})
+document.getElementById('SortBy5').addEventListener('click', e =>{
+  drawData(5);
+  document.getElementById('SortByActive').innerHTML = 'Количество фото >';
+})
+document.getElementById('SortBy6').addEventListener('click', e =>{
+  drawData(6);
+  document.getElementById('SortByActive').innerHTML = 'Количество фото <';
+})
 
 

@@ -62,12 +62,19 @@
           <div class="photo__title">Фото</div>
           <div class="photo__sortby">
             <div class="photo__sortby--text">Отсортировать по: </div>
-            <ul class="photo__sortby--list" id="sortby">
-              <li class="photo__sortby--list--item" id="sortbyBtn" name="name">Алфавиту А-Я</li>
-              <li class="photo__sortby--list--item" id="sortbyBtn" name="data">Новые</li>
-              <li class="photo__sortby--list--item" id="sortbyBtn" name="count">Количество фото</li>
-            </ul>
+						<div class="photo__sortby--dropdown">
+							<div class="photo__sortby--active" id="SortByActive">--none--</div>
+							<div class="photo__sortby--content">
+								<div id="SortBy1">Алфавиту А-Я</div>
+								<div id="SortBy2">Алфавиту Я-А</div>
+								<div id="SortBy3">Новые</div>
+								<div id="SortBy4">Старые</div>
+								<div id="SortBy5">Количество фото ></div>
+								<div id="SortBy6">Количество фото <</div>
+							</div>
+						</div>
           </div>
+
           <div class="photo__list" id="list"></div>
         </div>
       </section>

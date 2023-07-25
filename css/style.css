@@ -961,6 +961,7 @@ main {
   background-size: cover;
   background-position: center;
   min-height: 300px;
+  cursor: pointer;
 }
 .photo__list--item--text {
   border-radius: 30px;
@@ -984,35 +985,48 @@ main {
 }
 .photo__sortby {
   display: flex;
+  align-items: center;
   font-size: 24px;
   padding-bottom: 50px;
 }
 .photo__sortby--text {
-  padding: 5px;
+  font-size: 24px;
+  margin-right: 25px;
 }
-.photo__sortby--list {
-  display: flex;
-  padding-left: 25px;
+.photo__sortby--dropdown {
+  position: relative;
+  display: inline-block;
+  transition: opacity 0.3s;
 }
-.photo__sortby--list--item {
-  margin-right: 15px;
-  padding: 5px;
+.photo__sortby--active {
+  font-size: 24px;
   cursor: pointer;
-  border-radius: 15px;
-  background: rgba(0, 0, 0, 0);
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
-.photo__sortby--list--item:hover {
+.photo__sortby--content {
+  position: absolute;
   background: rgba(17, 17, 17, 0.3);
-  transition: background 0.3s;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  padding: 15px 25px;
+  border-radius: 30px;
+  min-width: 200px;
+  z-index: 10;
+  display: none;
 }
-.photo__sortby--list--item--active {
-  margin-right: 15px;
-  padding: 5px;
+.photo__sortby--content div {
   cursor: pointer;
-  border-radius: 15px;
-  background: rgba(17, 17, 17, 0.5);
-  transition: background 0.3s;
+  font-size: 18px;
+  display: block;
+  padding-bottom: 5px;
+  transition: all 0.3s;
+}
+.photo__sortby--content div:hover {
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.photo__sortby--dropdown:hover .photo__sortby--content {
+  display: block;
 }
 
 @media (max-width: 1200px) {
@@ -1035,6 +1049,9 @@ main {
   }
   .photo__list--item {
     min-height: 200px;
+  }
+  .photo__sortby--text {
+    font-size: 18px;
   }
 }
 @media (max-width: 480px) {
