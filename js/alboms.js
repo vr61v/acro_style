@@ -1,19 +1,18 @@
 var object = [{
   "name": "АRENA STAGE",
   "date": "18.03.23",
-  "count": 360
+  "count": 11
 },{
   "name": "Русские Звезды",
   "date": "28.01.23",
-  "count": 21
+  "count": 9
 },{
   "name": "Турнир Да.Бро",
   "date": "25.03.23",
-  "count": 108
+  "count": 7
 }]
 
 var data = JSON.parse(JSON.stringify(object));
-
 
 function drawData(active){
   const list = document.getElementById("list");
@@ -30,20 +29,15 @@ function drawData(active){
 
   for(let i = 0; i < data.length; ++i){
     list.innerHTML += 
-      `<div class="photo__list--item" style="background-image: url('../source/alboms/${data[i]['name']}/prev.jpg')"> 
+      `<div class="photo__list--item" onclick="openGallery('${ i }')" style="background-image: url('../source/alboms/${data[i]['name']}/prev.jpg')"> 
         <div class="photo__list--item--text">
           <div class="photo__list--item--title">${ data[i]['name'] }</div>
           <div class="photo__list--item--data">${ data[i]['date'] }</div>
         </div>
       </div>`;
-  }
+  } 
 }
-
-
-
 drawData(-1);
-
-
 
 document.getElementById('SortBy1').addEventListener('click', e =>{
   drawData(1);
@@ -71,3 +65,27 @@ document.getElementById('SortBy6').addEventListener('click', e =>{
 })
 
 
+
+function openGallery(element){
+  document.getElementById("gallery").style.display = "block";
+  document.getElementById("body").style.overflow = "hidden";
+  
+  var gallery = document.getElementById("gallery-content");
+  gallery.innerHTML = "";
+  for(let i = 1; i <= data[element]['count']; ++i){
+    gallery.innerHTML += `<div> <img class="gallery__img" src="../source/alboms/${data[element]['name']}/Файл ${i}.jpg" /> </div>`;
+  }
+  document.getElementsByClassName('photo__gallery').innerHTML = gallery;
+  
+}
+function closeGallery(){
+  document.getElementById("gallery").style.display = "none";
+  document.getElementById("body").style.overflow = "auto";
+}
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById("gallery")) {
+    document.getElementById("gallery").style.display = "none";
+    document.getElementById("body").style.overflow = "auto";
+  }
+}

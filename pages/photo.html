@@ -15,7 +15,7 @@
   
   <!-- Css -->
   <link rel="stylesheet" href="/css/style.css">
-
+	<link type="text/css" rel="stylesheet" href="/css/importCss/lightgallery-bundle.min.css" />
 
   <title>ArcoStyle - Фото</title>
 </head>
@@ -76,6 +76,16 @@
           </div>
 
           <div class="photo__list" id="list"></div>
+
+					<div class="gallery" id="gallery">
+						<div class="gallery__container">
+							<div class="gallery__text">
+								<p class="gallery__data">Albom Name, albom date</p>
+								<span class="gallery__close" onclick="closeGallery()">&times;</span>
+							</div>
+							<div class="gallery__content" id="gallery-content"></div>
+						</div>
+					</div>
         </div>
       </section>
       
@@ -112,10 +122,12 @@
 		</footer>
   </div>
 
+
+  <script src="/js/libres/vanilla-tilt.min.js"></script>
+	<script src="/js/libres/lightgallery.min.js"></script>
   <script src="/js/burger.js"></script>
   <script src="/js/scroll.js"></script>
   <script src="/js/alboms.js"></script>
-  <script src="/js/libres/vanilla-tilt.min.js"></script>
   <script src="/js/cards.js"></script>
  
 </body>
