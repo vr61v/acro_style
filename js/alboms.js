@@ -1,14 +1,14 @@
 var object = [{
   "name": "АRENA STAGE",
-  "date": "18.03.23",
+  "date": "2023.03.18",
   "count": 360
 },{
   "name": "Русские Звезды",
-  "date": "28.01.23",
+  "date": "2023.01.28",
   "count": 21
 },{
   "name": "Турнир Да.Бро",
-  "date": "25.03.23",
+  "date": "2023.03.25",
   "count": 108
 }]
 
@@ -21,12 +21,12 @@ function drawData(active){
     list.innerHTML = "";
     if(active == 1){data.sort((a, b) => a['name'] < b['name'] ? 1 : -1);}
     if(active == 2) {list.innerHTML = ""; data.sort((a, b) => a['name'] > b['name'] ? 1 : -1);}
-    if(active == 3) {list.innerHTML = ""; data.sort((a, b) => Date(a['date']) < Date(b['date']) ? 1 : -1);}
-    if(active == 4) {list.innerHTML = ""; data.sort((a, b) => Date(a['date']) > Date(b['date']) ? 1 : -1);}
+    if(active == 3) {list.innerHTML = ""; data.sort((a, b) => Date.parse(a['date']) < Date.parse(b['date']) ? 1 : -1);}
+    if(active == 4) {list.innerHTML = ""; data.sort((a, b) => Date.parse(a['date']) > Date.parse(b['date']) ? 1 : -1);}
     if(active == 5) {list.innerHTML = ""; data.sort((a, b) => a['count'] > b['count'] ? 1 : -1);}
     if(active == 6) {list.innerHTML = ""; data.sort((a, b) => a['count'] < b['count'] ? 1 : -1);}
   }
-
+  console.log(data);
   for(let i = 0; i < data.length; ++i){
     list.innerHTML += 
       `<div class="photo__list--item" onclick="openGallery('${ i }')" style="background-image: url('../source/alboms/${data[i]['name']}/prev.jpg')"> 
