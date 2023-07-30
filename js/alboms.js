@@ -50,10 +50,6 @@ function pagination(element) {
     for(let i = countItems * currentPage + 1; i <= countItems * currentPage + countItems; ++i){
       const image = new Image();
       image.src = `../source/alboms/${data[element]['name']}/Файл ${i}.jpg`;
-      if(image.width < image.height){
-        list.innerHTML += `<div class="gallery__img-lg"> <img class="gallery__img" src="../source/alboms/${data[element]['name']}/Файл ${i}.jpg" /> </div>`;
-        continue;
-      }
       list.innerHTML += `<div class="gallery__img-sm"> <img class="gallery__img" src="../source/alboms/${data[element]['name']}/Файл ${i}.jpg" /> </div>`;
     }
   }
@@ -64,25 +60,42 @@ function pagination(element) {
     const ul = document.createElement("ul");
     ul.classList.add('gallery__buttons--ul');
 
-    for (let i = 0; i < pages; ++i) {
-      const li = displayButtons(i + 1);
-      ul.appendChild(li);
+    let minI = 1; maxI = pages;
+    if(currpage - 2 > 0){ minI = currpage - 2; }
+    if(currpage + 2 < pages + 1){ maxI = currpage + 2; }
+    
+
+    if(minI != 1){    
+      const dotes = document.createElement("li");
+      dotes.innerText = "...";
+      ul.appendChild(displayButtons(1));
+      ul.appendChild(dotes);
     }
+    
+    for (let i = minI; i <= maxI; ++i) {
+      ul.appendChild(displayButtons(i));
+    }
+
+    if(maxI != pages){
+      const dotes = document.createElement("li");
+      dotes.innerText = "...";
+      ul.appendChild(dotes);
+      ul.appendChild(displayButtons(pages));
+    }
+
     buttons.appendChild(ul)
+
   }
   function displayButtons(pageCurr){
     const li = document.createElement("li");
     li.innerText = pageCurr;
 
-    if(page == pageCurr){
-      li.classList.add("gallery__active");
-    }
+    if(page == pageCurr){ li.classList.add("gallery__active"); }
 
     li.addEventListener('click', () => {
       page = pageCurr;
       draw(items, page);
-      document.querySelector("li.gallery__active").classList.remove("gallery__active");
-      li.classList.add('gallery__active');
+      display(page, items);
     })
 
     return li;
