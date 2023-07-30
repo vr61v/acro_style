@@ -37,7 +37,6 @@ function drawData(active){
       </div>`;
   } 
 }
-
 function pagination(element) {
   let page = 1;
   const items = 12;
@@ -48,9 +47,13 @@ function pagination(element) {
     --currentPage;
 
     for(let i = countItems * currentPage + 1; i <= countItems * currentPage + countItems; ++i){
-      const image = new Image();
+      if(i > data[element]['count']){ break; }
+      var item = document.createElement("div");
+      var image = document.createElement("img");
       image.src = `../source/alboms/${data[element]['name']}/Файл ${i}.jpg`;
-      list.innerHTML += `<div class="gallery__img-sm"> <img class="gallery__img" src="../source/alboms/${data[element]['name']}/Файл ${i}.jpg" /> </div>`;
+      image.classList.add("gallery__img");
+      item.appendChild(image);
+      list.appendChild(item);
     }
   }
   function display(currpage, countItems) {
@@ -104,8 +107,6 @@ function pagination(element) {
   draw(items, page);
   display(page, items);
 }
-
-drawData(-1);
 function openGallery(element){
   document.getElementById("gallery").style.display = "block";
   document.getElementById("body").style.overflow = "hidden";
@@ -117,6 +118,8 @@ function closeGallery(){
   document.getElementById("gallery").style.display = "none";
   document.getElementById("body").style.overflow = "auto";
 }
+drawData(-1);
+
 
 document.getElementById('SortBy1').addEventListener('click', e =>{
   drawData(1);
@@ -149,5 +152,6 @@ window.onclick = function(event) {
   }
 }
 
-
-
+document.getElementById('body').addEventListener('onload', (e)=>{
+  console.log(e);
+})
