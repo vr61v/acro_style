@@ -26,7 +26,6 @@ function drawData(active){
     if(active == 5) {list.innerHTML = ""; data.sort((a, b) => a['count'] > b['count'] ? 1 : -1);}
     if(active == 6) {list.innerHTML = ""; data.sort((a, b) => a['count'] < b['count'] ? 1 : -1);}
   }
-  console.log(data);
   for(let i = 0; i < data.length; ++i){
     list.innerHTML += 
       `<div class="photo__list--item" onclick="openGallery('${ i }')" style="background-image: url('../source/alboms/${data[i]['name']}/prev.jpg')"> 

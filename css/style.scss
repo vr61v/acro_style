@@ -815,7 +815,6 @@ main{
   }
 }
 
-
 .gallery {
   display: none;
   position: fixed;
@@ -912,6 +911,11 @@ main{
     &__list--item{ min-height: 200px; }
     &__sortby--text { font-size: 18px; }
   }
+  .gallery{
+    &__text{
+      font-size: 24px;
+    }
+  }
 }
 @media(max-width: 480px){
   .photo{
@@ -923,6 +927,16 @@ main{
     }
     &__list--item--data {
       font-size: 18px;
+    }
+    &__sortby--text {
+      margin-right: 5px;
+    }
+    &__sortby--active{
+      font-size: 18px;
+    }
+    &__sortby--content{
+      left: -75px;
+      padding: 10px;
     }
   }
 }

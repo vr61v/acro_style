@@ -1131,6 +1131,9 @@ main {
   .photo__sortby--text {
     font-size: 18px;
   }
+  .gallery__text {
+    font-size: 24px;
+  }
 }
 @media (max-width: 480px) {
   .photo__container {
@@ -1145,6 +1148,16 @@ main {
   }
   .photo__list--item--data {
     font-size: 18px;
+  }
+  .photo__sortby--text {
+    margin-right: 5px;
+  }
+  .photo__sortby--active {
+    font-size: 18px;
+  }
+  .photo__sortby--content {
+    left: -75px;
+    padding: 10px;
   }
 }
 .footer {
