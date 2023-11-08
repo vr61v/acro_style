@@ -49,7 +49,8 @@ function pagination(element) {
       if(i > data[element]['count']){ break; }
       var item = document.createElement("div");
       var image = document.createElement("img");
-      image.src = `../source/alboms/${data[element]['name']}/Файл ${i}.jpg`;
+      image.src = `../source/alboms/${data[element]['name']}/file${i}.jpg`;
+      console.log(`../source/alboms/${data[element]['name']}/file${i}.jpg`)
       image.classList.add("gallery__img");
       item.appendChild(image);
       list.appendChild(item);
@@ -150,7 +151,3 @@ window.onclick = function(event) {
     document.getElementById("body").style.overflow = "auto";
   }
 }
-
-document.getElementById('body').addEventListener('onload', (e)=>{
-  console.log(e);
-})

@@ -358,7 +358,102 @@ main{
   }
 }
 
+// REGALIA
+.regalia {
+  position: relative;
+  background-image: url(../source/background/regalia.PNG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
+  &__container{
+    padding: 200px 0;
+  }
+  &__title {
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__content{
+    margin: 100px 50px 50px;
+    overflow: hidden;
+  }
+
+  &__information{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__video{
+    height: 750px;
+    video{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+  }
+  &__text{
+    max-width: 700px;
+    max-height: 620px;
+    border-radius: 30px;
+    background: rgba($color: $black, $alpha: 0.3);
+    backdrop-filter: blur(5px);
+    margin-left: 20px;
+    text-align: right;
+  }
+  &__description{
+    font-size: 32px; 
+    padding: 40px;
+  }
+}
+@media(max-width: 1200px) {
+  .regalia{  
+    &__container { padding: 200px 20px; }
+    &__content{
+      margin: 100px 25px 50px;
+      overflow: hidden;
+    }
+
+    &__information{
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    &__text {
+      max-width: none;
+      max-height: none;
+      margin-right: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    &__img{
+      height: 450px;
+      width: 600px;
+    }
+  }
+}
+@media(max-width: 728px){
+  .regalia{
+    &__container { padding: 100px 20px; }
+    &__title { font-size: 48px;}
+    &__text{ margin-bottom: 20px;}
+    &__description { font-size: 24px;}
+    &__img{
+      width: 400px;
+    }
+  }
+
+}
+@media(max-width: 480px){
+  .regalia {
+    &__container { padding: 100px 20px; }
+    &__title { font-size: 32px; }
+    &__description { font-size: 18px; padding: 20px;}
+    &__img{
+      width: 300px;
+    }
+  }
+}
 // DIRECTIONS
 .directions {
   position: relative;
@@ -400,6 +495,9 @@ main{
       object-fit: cover;
       border-radius: 30px;
     }
+    &-regalia{
+      margin: 30px 0;
+    }
   }
   &__title {
     text-align: center;
@@ -410,6 +508,9 @@ main{
   &__description{
     padding: 20px 20px 40px;
     font-size: 24px;
+  }
+  &-regalia{
+    
   }
 }
 .swiper-button-next:after,.swiper-button-prev:after {
@@ -1040,6 +1141,3 @@ main{
     &__container { padding: 25px 20px; }
   }
 }
-
-
-
