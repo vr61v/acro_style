@@ -367,7 +367,7 @@ main{
   background-position: center;
 
   &__container{
-    padding: 200px 0;
+    padding: 200px 20px;
   }
   &__title {
     font-size: 64px;
@@ -411,7 +411,7 @@ main{
   .regalia{  
     &__container { padding: 200px 20px; }
     &__content{
-      margin: 100px 25px 50px;
+      margin: 50px 25px 50px;
       overflow: hidden;
     }
 
@@ -419,12 +419,14 @@ main{
       flex-direction: column-reverse;
       align-items: center;
     }
-    &__text {
+    &__text{ margin-bottom: 20px;}
+    &__video {
       max-width: none;
       max-height: none;
       margin-right: 0;
       margin-bottom: 20px;
       text-align: left;
+      width: 700px;
     }
     &__img{
       height: 450px;
@@ -436,10 +438,13 @@ main{
   .regalia{
     &__container { padding: 100px 20px; }
     &__title { font-size: 48px;}
-    &__text{ margin-bottom: 20px;}
     &__description { font-size: 24px;}
-    &__img{
-      width: 400px;
+    &__video{
+        max-height: 450px;
+        width: 100%;
+    }
+    &__content{
+      margin: 25px 25px 50px;
     }
   }
 
@@ -449,8 +454,8 @@ main{
     &__container { padding: 100px 20px; }
     &__title { font-size: 32px; }
     &__description { font-size: 18px; padding: 20px;}
-    &__img{
-      width: 300px;
+    &__video{
+      width: 100%;
     }
   }
 }

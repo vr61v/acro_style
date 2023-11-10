@@ -520,7 +520,7 @@ main {
   background-position: center;
 }
 .regalia__container {
-  padding: 200px 0;
+  padding: 200px 20px;
 }
 .regalia__title {
   font-size: 64px;
@@ -566,7 +566,7 @@ main {
     padding: 200px 20px;
   }
   .regalia__content {
-    margin: 100px 25px 50px;
+    margin: 50px 25px 50px;
     overflow: hidden;
   }
   .regalia__information {
@@ -574,11 +574,15 @@ main {
     align-items: center;
   }
   .regalia__text {
+    margin-bottom: 20px;
+  }
+  .regalia__video {
     max-width: none;
     max-height: none;
     margin-right: 0;
     margin-bottom: 20px;
     text-align: left;
+    width: 700px;
   }
   .regalia__img {
     height: 450px;
@@ -592,14 +596,15 @@ main {
   .regalia__title {
     font-size: 48px;
   }
-  .regalia__text {
-    margin-bottom: 20px;
-  }
   .regalia__description {
     font-size: 24px;
   }
-  .regalia__img {
-    width: 400px;
+  .regalia__video {
+    max-height: 450px;
+    width: 100%;
+  }
+  .regalia__content {
+    margin: 25px 25px 50px;
   }
 }
 @media (max-width: 480px) {
@@ -613,8 +618,8 @@ main {
     font-size: 18px;
     padding: 20px;
   }
-  .regalia__img {
-    width: 300px;
+  .regalia__video {
+    width: 100%;
   }
 }
 .directions {
