@@ -494,6 +494,9 @@ main {
   .director__description {
     font-size: 24px;
   }
+  .director__content {
+    padding-top: 50px;
+  }
 }
 @media (max-width: 480px) {
   .director__container {
@@ -609,6 +612,9 @@ main {
   }
   .regalia__content {
     margin: 25px 25px 50px;
+  }
+  .regalia__information {
+    padding-top: 50px;
   }
 }
 @media (max-width: 480px) {
@@ -1295,7 +1301,7 @@ main {
 .video__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 50px;
+  row-gap: 25px;
   -moz-column-gap: 25px;
        column-gap: 25px;
   justify-items: center;
@@ -1323,7 +1329,7 @@ main {
   }
   .video__content iframe {
     width: 100%;
-    height: 350px;
+    height: 250px;
   }
 }
 @media (max-width: 480px) {
