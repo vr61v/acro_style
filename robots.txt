@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://localstarstu.ru/sitemap.xml

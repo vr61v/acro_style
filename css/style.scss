@@ -420,6 +420,10 @@ main{
       align-items: center;
     }
     &__text{ margin-bottom: 20px;}
+    &__text{
+      max-width: none;
+      margin-left: 0;
+    }
     &__video {
       max-width: none;
       max-height: none;

@@ -576,6 +576,10 @@ main {
   .regalia__text {
     margin-bottom: 20px;
   }
+  .regalia__text {
+    max-width: none;
+    margin-left: 0;
+  }
   .regalia__video {
     max-width: none;
     max-height: none;
